@@ -2,25 +2,33 @@ version: 2
 
 models:
   - name: invoice_employee_customer
+    description: the relation between invoices, employees and customers
     columns:
       - name: invoice_id
+        description: the primary key, invoice ids must be unique
         tests:
           - unique
           - not_null
       - name: support_rep_id
+        description: same as the employee id, cannot be null
         tests:
           - not_null
       - name: customer_id
+        description: invoice must be associated with a customer, cannot be null
         tests:
           - not_null
 
   - name: revenue_by_customer
+    description: revenue provided by a customer
     columns:
       - name: customer_name
+        description: customer's name, should not be null
         tests:
           - not_null
       - name: customer_id
+        description: customer's id, should not be null, must be unique
         tests:
+          - unique
           - not_null
           - relationships:
               to: ref('invoice_employee_customer')
