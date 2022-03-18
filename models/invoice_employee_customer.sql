@@ -1,7 +1,9 @@
 select
     e.employee_id,
-    e.first_name,
-    e.last_name,
+    e.first_name as employee_first_name,
+    e.last_name as employee_last_name,
+    c.first_name as customer_first_name,
+    c.last_name as customer_last_name,
     c.support_rep_id,
     i.customer_id,
     i.total
