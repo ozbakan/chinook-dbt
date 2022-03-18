@@ -5,8 +5,9 @@ select
     c.first_name as customer_first_name,
     c.last_name as customer_last_name,
     c.support_rep_id,
-    i.customer_id,
-    i.total
+    i.customer_id as customer_id,
+    i.total,
+    i.invoice_id
 from
     chinook.public.invoice as i
     left join chinook.public.customer as c

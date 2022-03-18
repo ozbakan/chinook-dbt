@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: invoice_employee_customer
+    columns:
+      - name: invoice_id
+        tests:
+          - unique
+          - not_null
+      - name: support_rep_id
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+
+  - name: revenue_by_customer
+    columns:
+      - name: customer_name
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('invoice_employee_customer')
+              field: customer_id

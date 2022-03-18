@@ -5,8 +5,8 @@ select
     i.billing_country as country,
     i.customer_id as customer_id
 from
-    invoice_line as il
-    left join invoice as i using (invoice_id)
-    left join customer as c using (customer_id)
-    left join track as t using (track_id)
-    left join genre as g using (genre_id)
+    chinook.public.invoice_line as il
+    left join chinook.public.invoice as i using (invoice_id)
+    left join chinook.public.customer as c using (customer_id)
+    left join chinook.public.track as t using (track_id)
+    left join chinook.public.genre as g using (genre_id)

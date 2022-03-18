@@ -12,6 +12,7 @@ with customer_revenue as (
         3
 )
 select
+    customer_id,
     first_name || ' ' || last_name as customer_name,
     revenue
 from
